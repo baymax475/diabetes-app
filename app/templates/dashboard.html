@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<p>Explore the diabetes dataset below.</p>
+
+<!-- Data Table -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Pregnancies</th>
+            <th>Glucose</th>
+            <th>Blood Pressure</th>
+            <th>Skin Thickness</th>
+            <th>Insulin</th>
+            <th>BMI</th>
+            <th>Diabetes Pedigree Function</th>
+            <th>Age</th>
+            <th>Outcome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.Pregnancies }}</td>
+            <td>{{ row.Glucose }}</td>
+            <td>{{ row.BloodPressure }}</td>
+            <td>{{ row.SkinThickness }}</td>
+            <td>{{ row.Insulin }}</td>
+            <td>{{ row.BMI }}</td>
+            <td>{{ row.DiabetesPedigreeFunction }}</td>
+            <td>{{ row.Age }}</td>
+            <td>{{ row.Outcome }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

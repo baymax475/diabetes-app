@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to the Diabetes Prediction App</h1>
+<p>This app helps you predict the likelihood of diabetes based on health metrics.</p>
+{% if not current_user.is_authenticated %}
+    <p>Please <a href="{{ url_for('auth_routes.login') }}">login</a> or <a href="{{ url_for('auth_routes.signup') }}">sign up</a> to access the dashboard.</p>
+{% else %}
+    <p>Go to the <a href="{{ url_for('dashboard_routes.dashboard') }}">dashboard</a> to explore the data.</p>
+{% endif %}
+{% endblock %}
